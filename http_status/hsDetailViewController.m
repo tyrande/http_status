@@ -8,6 +8,10 @@
 
 #import "hsDetailViewController.h"
 
+//#import "AFNetworking.h"
+
+#import "IBoolooHttpClient.h"
+
 @interface hsDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
@@ -20,10 +24,33 @@
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+        IBoolooHttpClient *iboolooHC = [[IBoolooHttpClient alloc] init];
+//        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: @"tyrande@163.com", @"user[email]", @"271828", @"user[password]", nil];
+//        [iboolooHC login:params
+//           success:^(NSString *body) {
+//                 _detailItem = body;
+//                 [self configureView];
+//             } failure:^(NSString *body) {
+//                 _detailItem = body;
+//                 [self configureView];
+//             }];
+//        [iboolooHC noticeWithSuccess:^(NSString *body) {
+//                     _detailItem = body;
+//                     [self configureView];
+//                 } failure:^(NSString *body) {
+//                     _detailItem = body;
+//                     [self configureView];
+//                 }];
         
-        // Update the view.
-        [self configureView];
+        [iboolooHC ope:@"Info"
+            parameters:[NSMutableDictionary dictionary]
+               success:^(NSString *body) {
+                   _detailItem = body;
+                   [self configureView];
+               } failure:^(NSString *body) {
+                   _detailItem = body;
+                   [self configureView];
+               }];
     }
 
     if (self.masterPopoverController != nil) {

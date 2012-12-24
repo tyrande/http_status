@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Notice</key>
+	<dict>
+		<key>Method</key>
+		<string>GET</string>
+		<key>Path</key>
+		<string>/users/notice</string>
+		<key>Params</key>
+		<dict/>
+	</dict>
+	<key>Login</key>
+	<dict>
+		<key>Method</key>
+		<string>POST</string>
+		<key>Path</key>
+		<string>/</string>
+		<key>Params</key>
+		<dict/>
+	</dict>
+	<key>Info</key>
+	<dict>
+		<key>Method</key>
+		<string>GET</string>
+		<key>Path</key>
+		<string>/users/info</string>
+		<key>Params</key>
+		<dict/>
+	</dict>
+</dict>
+</plist>
