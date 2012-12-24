@@ -24,7 +24,7 @@
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
-        IBoolooHttpClient *iboolooHC = [[IBoolooHttpClient alloc] init];
+//        IBoolooHttpClient *iboolooHC = [[IBoolooHttpClient alloc] init];
 //        NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys: @"tyrande@163.com", @"user[email]", @"271828", @"user[password]", nil];
 //        [iboolooHC login:params
 //           success:^(NSString *body) {
@@ -42,7 +42,16 @@
 //                     [self configureView];
 //                 }];
         
-        [iboolooHC ope:@"Info"
+//        [iboolooHC ope:@"Info"
+//            parameters:[NSMutableDictionary dictionary]
+//               success:^(NSString *body) {
+//                   _detailItem = body;
+//                   [self configureView];
+//               } failure:^(NSString *body) {
+//                   _detailItem = body;
+//                   [self configureView];
+//               }];
+        [[IBoolooHttpClient sharedClient] ope:@"Info"
             parameters:[NSMutableDictionary dictionary]
                success:^(NSString *body) {
                    _detailItem = body;

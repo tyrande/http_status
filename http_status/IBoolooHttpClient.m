@@ -18,6 +18,18 @@
 
 @implementation IBoolooHttpClient
 
++(IBoolooHttpClient *)sharedClient
+{
+    static IBoolooHttpClient *sharedClient;
+    @synchronized(self)
+    {
+        if (!sharedClient)
+            sharedClient = [[IBoolooHttpClient alloc] init];
+        
+        return sharedClient;
+    }
+}
+
 - (id)init
 {
     self = [super initWithBaseURL:[NSURL URLWithString:IBODOMAIN]];

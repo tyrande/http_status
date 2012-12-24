@@ -14,6 +14,8 @@
 
 @interface IBoolooHttpClient : AFHTTPClient
 
++(IBoolooHttpClient *)sharedClient;
+
 -(void)ope:(NSString *)identify
 parameters:params
    success:(void (^)(NSString *))success
