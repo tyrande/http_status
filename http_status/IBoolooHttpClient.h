@@ -14,11 +14,13 @@
 
 @interface IBoolooHttpClient : AFHTTPClient
 
+@property (readwrite, nonatomic, strong)NSMutableDictionary *routes;
+
 +(IBoolooHttpClient *)sharedClient;
 
 -(void)ope:(NSString *)identify
 parameters:params
-   success:(void (^)(NSString *))success
-   failure:(void (^)(NSString *))failure;
+   success:(void (^)(NSDictionary *))success
+   failure:(void (^)(NSDictionary *))failure;
 
 @end
