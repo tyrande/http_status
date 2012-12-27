@@ -28,10 +28,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _actions = [[NITableViewActions alloc] initWithTarget:self];
-    NSArray *rts = [[[IBoolooHttpClient sharedClient].routes allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSDictionary *rtsDic = [IBoolooHttpClient sharedClient].routes;
+    NSArray *rts = [[rtsDic allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSMutableArray* tableContents = [NSMutableArray array];
     for (NSInteger ix = 0; ix < [rts count]; ++ix) {
-        [tableContents addObject:[_actions attachToObject:[NITitleCellObject objectWithTitle: [rts objectAtIndex:ix]]
+        NSString *indentifer = [rts objectAtIndex:ix];
+        NSString *subtitle = [[rtsDic objectForKey:indentifer] objectForKey:@"Method"];
+        subtitle = [subtitle stringByAppendingString:[NSString stringWithFormat:@" %@", [[rtsDic objectForKey:indentifer] objectForKey:@"Path"]]];
+        [tableContents addObject:[_actions attachToObject:[NISubtitleCellObject objectWithTitle:indentifer subtitle:subtitle]
                                           navigationBlock:^(id object, UIViewController* controller) {
                                               hsResponseViewController* resController = [[hsResponseViewController alloc] init];
                                               [resController requestWithIdentifer:[object title]];

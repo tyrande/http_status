@@ -48,6 +48,10 @@ parameters:params
     [params addEntriesFromDictionary: [route objectForKey:@"Params"]];
     NSMutableURLRequest *request = [self requestWithMethod:[route objectForKey:@"Method"] path:[route objectForKey:@"Path"] parameters:params];
 //    NSLog(@"Req Header: %@", [request allHTTPHeaderFields]);
+//    NSURL *cookieURL = [NSURL URLWithString:IBODOMAIN];
+//    NSArray *cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:cookieURL];
+//    NSLog(@"Cookies: %@", cookies);
+//    NSLog(@"Cookies: %@",[[NSHTTPCookieStorage sharedHTTPCookieStorage]cookies]);
     AFHTTPRequestOperation *operation =
         [self HTTPRequestOperationWithRequest:request
               success:^(AFHTTPRequestOperation *operation, id responseObject) {

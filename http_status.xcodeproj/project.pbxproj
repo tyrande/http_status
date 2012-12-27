@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8384E8711689AB0E00873B41 /* hsHeadersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E8701689AB0E00873B41 /* hsHeadersViewController.m */; };
 		8384E8751689B23200873B41 /* hsHeaderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E8741689B23200873B41 /* hsHeaderDetailViewController.m */; };
+		83A39187168AA4FD00DD53B7 /* hsHttpEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */; };
+		83A3918E168ADC3900DD53B7 /* hsSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3918D168ADC3900DD53B7 /* hsSiteViewController.m */; };
 		83A45B2C168819BB0032CD69 /* routes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A45B2B168819BB0032CD69 /* routes.plist */; };
 		83A6AF9B168314EA007B35C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A6AF9A168314EA007B35C3 /* UIKit.framework */; };
 		83A6AF9D168314EA007B35C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A6AF9C168314EA007B35C3 /* Foundation.framework */; };
@@ -68,6 +70,7 @@
 		83DA179A168980FA00CCB83C /* NITableViewActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA178F168980F900CCB83C /* NITableViewActions.m */; };
 		83DA179B168980FA00CCB83C /* NITableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA1791168980F900CCB83C /* NITableViewModel.m */; };
 		83DA179E1689843A00CCB83C /* hsIboolooViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA179D1689843A00CCB83C /* hsIboolooViewController.m */; };
+		83F08377168C1A8B007F232E /* hsSiteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,10 @@
 		8384E8701689AB0E00873B41 /* hsHeadersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHeadersViewController.m; sourceTree = "<group>"; };
 		8384E8731689B23200873B41 /* hsHeaderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsHeaderDetailViewController.h; sourceTree = "<group>"; };
 		8384E8741689B23200873B41 /* hsHeaderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHeaderDetailViewController.m; sourceTree = "<group>"; };
+		83A39185168AA4FD00DD53B7 /* hsHttpEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsHttpEngine.h; sourceTree = "<group>"; };
+		83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHttpEngine.m; sourceTree = "<group>"; };
+		83A3918C168ADC3900DD53B7 /* hsSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsSiteViewController.h; sourceTree = "<group>"; };
+		83A3918D168ADC3900DD53B7 /* hsSiteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsSiteViewController.m; sourceTree = "<group>"; };
 		83A45B2B168819BB0032CD69 /* routes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = routes.plist; path = http_status/routes.plist; sourceTree = "<group>"; };
 		83A6AF96168314EA007B35C3 /* http_status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = http_status.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A6AF9A168314EA007B35C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -203,6 +210,8 @@
 		83DA1792168980F900CCB83C /* NITableViewModel+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+Private.h"; path = "nimbus/src/models/src/NITableViewModel+Private.h"; sourceTree = "<group>"; };
 		83DA179C1689843A00CCB83C /* hsIboolooViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsIboolooViewController.h; sourceTree = "<group>"; };
 		83DA179D1689843A00CCB83C /* hsIboolooViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsIboolooViewController.m; sourceTree = "<group>"; };
+		83F08375168C1A8B007F232E /* hsSiteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsSiteDetailViewController.h; sourceTree = "<group>"; };
+		83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsSiteDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +243,8 @@
 			children = (
 				83D797CB16840B32002CF147 /* IBoolooHttpClient.h */,
 				83D797CC16840B32002CF147 /* IBoolooHttpClient.m */,
+				83A39185168AA4FD00DD53B7 /* hsHttpEngine.h */,
+				83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */,
 			);
 			name = HSHttpClient;
 			sourceTree = "<group>";
@@ -281,6 +292,10 @@
 				838BEC5C16832F7A009FD77B /* HSHttpClient */,
 				83A6AFB2168314EA007B35C3 /* MainStoryboard_iPhone.storyboard */,
 				83A6AFB5168314EA007B35C3 /* MainStoryboard_iPad.storyboard */,
+				83A3918C168ADC3900DD53B7 /* hsSiteViewController.h */,
+				83A3918D168ADC3900DD53B7 /* hsSiteViewController.m */,
+				83F08375168C1A8B007F232E /* hsSiteDetailViewController.h */,
+				83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */,
 				83DA179C1689843A00CCB83C /* hsIboolooViewController.h */,
 				83DA179D1689843A00CCB83C /* hsIboolooViewController.m */,
 				83DA1775168965C100CCB83C /* hsResponseViewController.h */,
@@ -614,6 +629,9 @@
 				83DA179E1689843A00CCB83C /* hsIboolooViewController.m in Sources */,
 				8384E8711689AB0E00873B41 /* hsHeadersViewController.m in Sources */,
 				8384E8751689B23200873B41 /* hsHeaderDetailViewController.m in Sources */,
+				83A39187168AA4FD00DD53B7 /* hsHttpEngine.m in Sources */,
+				83A3918E168ADC3900DD53B7 /* hsSiteViewController.m in Sources */,
+				83F08377168C1A8B007F232E /* hsSiteDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

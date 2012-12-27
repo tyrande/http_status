@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface hsResponseViewController : UITableViewController
+@interface hsResponseViewController : UIViewController
 - (void)requestWithIdentifer:(NSString *)identifer;
 @end

@@ -18,54 +18,71 @@
 @interface hsResponseViewController ()
 @property (nonatomic, readwrite, retain) NITableViewModel* model;
 @property (nonatomic, readwrite, retain) NITableViewActions* actions;
-@property (nonatomic, readwrite, retain) NITitleCellObject* bodyCell;
+@property (nonatomic, retain) UITextView *bodyTextView;
 @property (nonatomic, readwrite, retain) NSDictionary* httpResponse;
+@property (nonatomic, readwrite, retain) NSString* httpIdentifer;
 @end
 
 @implementation hsResponseViewController
 
 @synthesize model = _model;
 @synthesize actions = _actions;
-@synthesize bodyCell = _bodyCell;
 @synthesize httpResponse = _httpResponse;
+@synthesize httpIdentifer = _httpIdentifer;
 
-- (id)initWithStyle:(UITableViewStyle)style {
-    self = [super initWithStyle:UITableViewStyleGrouped];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Headers" style:UIBarButtonItemStyleBordered target:self action:@selector(showHeaders:)];
-        _actions = [[NITableViewActions alloc] initWithTarget:self];
-        self.bodyCell = [NITitleCellObject objectWithTitle:@"aaa"];
-        NSArray* tableContents =
-        [NSArray arrayWithObjects:
-         @"Body",
-         self.bodyCell,
-         
-         @"",
-         [_actions attachToObject:[NITitleCellObject objectWithTitle:@"Headers"]
-                  navigationBlock:^(id object, UIViewController* controller) {
-                      hsHeadersViewController* headerController = [[hsHeadersViewController alloc] init];
-                      [headerController setHeaders:self.httpResponse];
-                      [controller.navigationController pushViewController:headerController animated:YES];
-                      return NO;
-                  }],
-         nil];
-        self.model = [[NITableViewModel alloc] initWithSectionedArray:tableContents delegate:(id)[NICellFactory class]];
-        self.tableView.delegate = [self.actions forwardingTo:self];
     }
     return self;
 }
 
+
+//- (id)initWithStyle:(UITableViewStyle)style {
+//    self = [super initWithStyle:UITableViewStyleGrouped];
+//    if (self) {
+//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Headers" style:UIBarButtonItemStyleBordered target:self action:@selector(showHeaders:)];
+//        _actions = [[NITableViewActions alloc] initWithTarget:self];
+//        self.bodyCell = [NITitleCellObject objectWithTitle:@"aaa"];
+//        NSArray* tableContents =
+//        [NSArray arrayWithObjects:
+//         @"Body",
+//         self.bodyCell,
+//         
+//         @"",
+//         [_actions attachToObject:[NITitleCellObject objectWithTitle:@"Headers"]
+//                  navigationBlock:^(id object, UIViewController* controller) {
+//                      hsHeadersViewController* headerController = [[hsHeadersViewController alloc] init];
+//                      [headerController setHeaders:self.httpResponse];
+//                      [controller.navigationController pushViewController:headerController animated:YES];
+//                      return NO;
+//                  }],
+//         nil];
+//        self.model = [[NITableViewModel alloc] initWithSectionedArray:tableContents delegate:(id)[NICellFactory class]];
+//        self.tableView.delegate = [self.actions forwardingTo:self];
+//    }
+//    return self;
+//}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.dataSource = _model;
+//    self.tableView.dataSource = _model;
 }
 
 - (void)setBody {
-    [self.bodyCell setTitle:[NSString stringWithFormat:@"%@", [self.httpResponse objectForKey:@"Body"]]];
-    [self.tableView reloadData];
+//    [self.bodyCell setTitle:[NSString stringWithFormat:@"%@", [self.httpResponse objectForKey:@"Body"]]];
+//    [self.tableView reloadData];
+    self.bodyTextView = [[UITextView  alloc] initWithFrame:self.view.frame];
+    self.bodyTextView.text = [NSString stringWithFormat:@"%@", [self.httpResponse objectForKey:@"Body"]];
+    self.bodyTextView.scrollEnabled = YES;
+    self.bodyTextView.editable = NO;
+    [self.view addSubview: self.bodyTextView];
 }
 
 - (void)requestWithIdentifer:(NSString *)identifer {
+    self.httpIdentifer = identifer;
     [[IBoolooHttpClient sharedClient] ope:identifer
                                parameters:[NSMutableDictionary dictionary]
                                   success:^(NSDictionary *httpResponse) {

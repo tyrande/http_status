@@ -11,7 +11,8 @@
 //#import "NimbusAttributedLabel.h"
 
 @interface hsHeaderDetailViewController ()
-
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UITextView *valueTextView;
 @end
 
 @implementation hsHeaderDetailViewController
@@ -40,8 +41,15 @@
 - (void)showDetail:(NSDictionary *)detail {
 //    NIAttributedLabel* label = [[NIAttributedLabel alloc] initWithFrame:CGRectZero];
 //    label.text = @"An explorer's tale";
-    UILabel *labelTitle = [[UILabel alloc] initWithFrame:CGRectMake(20, 40, 280, 80)];
-    labelTitle.text = [detail objectForKey:@"Title"];
-    [self.view addSubview:labelTitle];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
+    self.titleLabel.text = [detail objectForKey:@"Title"];
+    [self.view addSubview:self.titleLabel];
+    
+    self.valueTextView = [[UITextView  alloc] initWithFrame:CGRectMake(20, 80, 280, 500)];
+    self.valueTextView.text = [detail objectForKey:@"SubTitle"];
+    self.valueTextView.scrollEnabled = YES;
+    self.valueTextView.editable = NO;
+    [self.view addSubview: self.valueTextView];
 }
 @end
