@@ -9,6 +9,7 @@
 #import "hsHeadersViewController.h"
 
 #import "hsHeaderDetailViewController.h"
+#import "hsCookieDetailViewController.h"
 
 #import "NimbusModels.h"
 #import "NimbusCore.h"
@@ -32,10 +33,21 @@
 - (void)setHeaders:(NSDictionary *)httpResponse {
     NSDictionary *requestHeader = [httpResponse objectForKey:@"Request"];
     NSDictionary *responseHeader = [httpResponse objectForKey:@"Response"];
+    NSArray *cookies = [httpResponse objectForKey:@"Cookies"];
     NSArray *requestHeaderTitles = [[requestHeader allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSArray *responseHeaderTitles = [[responseHeader allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     _actions = [[NITableViewActions alloc] initWithTarget:self];
     NSMutableArray* tableContents = [NSMutableArray array];
+    [tableContents addObject:@"Cookies"];
+    for (NSHTTPCookie *cookie in cookies) {
+        [tableContents addObject:[_actions attachToObject:[NISubtitleCellObject objectWithTitle:cookie.name subtitle:cookie.value]
+                                          navigationBlock:^(id object, UIViewController* controller) {
+                                              hsCookieDetailViewController* cookieDetailController = [[hsCookieDetailViewController alloc] init];
+                                              [cookieDetailController showCookie:cookie];
+                                              [controller.navigationController pushViewController:cookieDetailController animated:YES];
+                                              return NO;
+                                          }]];
+    }
     [tableContents addObject:@"Request Header"];
     for (NSInteger ix = 0; ix < [requestHeaderTitles count]; ++ix) {
         NSString *requestHeaderTitle = [requestHeaderTitles objectAtIndex:ix];
@@ -61,6 +73,7 @@
                                               [controller.navigationController pushViewController:headerDetailController animated:YES];
                                               return NO;
                                           }]];
+    
     }
     self.model = [[NITableViewModel alloc] initWithSectionedArray:tableContents delegate:(id)[NICellFactory class]];
     self.tableView.delegate = [self.actions forwardingTo:self];

@@ -13,7 +13,7 @@
 #import "NimbusModels.h"
 #import "NimbusCore.h"
 
-#import "IBoolooHttpClient.h"
+#import "hsHttpEngine.h"
 
 @interface hsResponseViewController ()
 @property (nonatomic, readwrite, retain) NITableViewModel* model;
@@ -82,8 +82,18 @@
 }
 
 - (void)requestWithIdentifer:(NSString *)identifer {
-    self.httpIdentifer = identifer;
-    [[IBoolooHttpClient sharedClient] ope:identifer
+//    self.httpIdentifer = identifer;
+//    [[IBoolooHttpClient sharedClient] ope:identifer
+//                               parameters:[NSMutableDictionary dictionary]
+//                                  success:^(NSDictionary *httpResponse) {
+//                                      self.httpResponse = httpResponse;
+//                                      [self setBody];
+//                                  } failure:^(NSDictionary *httpResponse) {
+//                                      self.httpResponse = httpResponse;
+//                                      [self setBody];
+//                                  }];
+
+    [[hsHttpEngine sharedEngine] ope:identifer
                                parameters:[NSMutableDictionary dictionary]
                                   success:^(NSDictionary *httpResponse) {
                                       self.httpResponse = httpResponse;
@@ -92,7 +102,7 @@
                                       self.httpResponse = httpResponse;
                                       [self setBody];
                                   }];
-    
+
 }
 
 - (void)showHeaders:(id)sender {

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8376580D168C4A7D00030357 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8376580C168C4A7D00030357 /* MBProgressHUD.m */; };
 		8384E8711689AB0E00873B41 /* hsHeadersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E8701689AB0E00873B41 /* hsHeadersViewController.m */; };
 		8384E8751689B23200873B41 /* hsHeaderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8384E8741689B23200873B41 /* hsHeaderDetailViewController.m */; };
+		8389D51C168C5F33007F3298 /* hsCookieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389D51B168C5F33007F3298 /* hsCookieDetailViewController.m */; };
 		83A39187168AA4FD00DD53B7 /* hsHttpEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */; };
 		83A3918E168ADC3900DD53B7 /* hsSiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A3918D168ADC3900DD53B7 /* hsSiteViewController.m */; };
 		83A45B2C168819BB0032CD69 /* routes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83A45B2B168819BB0032CD69 /* routes.plist */; };
@@ -48,7 +50,6 @@
 		83A6B05D168318B2007B35C3 /* NIState.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B048168318B2007B35C3 /* NIState.m */; };
 		83A6B05E168318B2007B35C3 /* NIViewRecycler.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B04A168318B2007B35C3 /* NIViewRecycler.m */; };
 		83A6B05F168318B2007B35C3 /* NSString+NimbusCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B04C168318B2007B35C3 /* NSString+NimbusCore.m */; };
-		83A6B07A16831AC7007B35C3 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B06816831AC7007B35C3 /* AFHTTPClient.m */; };
 		83A6B07B16831AC7007B35C3 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B06A16831AC7007B35C3 /* AFHTTPRequestOperation.m */; };
 		83A6B07C16831AC7007B35C3 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B06C16831AC7007B35C3 /* AFImageRequestOperation.m */; };
 		83A6B07D16831AC7007B35C3 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B06E16831AC7007B35C3 /* AFJSONRequestOperation.m */; };
@@ -57,7 +58,6 @@
 		83A6B08016831AC7007B35C3 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B07516831AC7007B35C3 /* AFURLConnectionOperation.m */; };
 		83A6B08116831AC7007B35C3 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B07716831AC7007B35C3 /* AFXMLRequestOperation.m */; };
 		83A6B08216831AC7007B35C3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A6B07916831AC7007B35C3 /* UIImageView+AFNetworking.m */; };
-		83D797CD16840B32002CF147 /* IBoolooHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83D797CC16840B32002CF147 /* IBoolooHttpClient.m */; };
 		83DA1777168965C100CCB83C /* hsResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA1776168965C100CCB83C /* hsResponseViewController.m */; };
 		83DA177A16896AE300CCB83C /* hsBodyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA177916896AE300CCB83C /* hsBodyCell.m */; };
 		83DA1793168980FA00CCB83C /* NICellBackgrounds.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA177E168980F900CCB83C /* NICellBackgrounds.m */; };
@@ -70,6 +70,9 @@
 		83DA179A168980FA00CCB83C /* NITableViewActions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA178F168980F900CCB83C /* NITableViewActions.m */; };
 		83DA179B168980FA00CCB83C /* NITableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA1791168980F900CCB83C /* NITableViewModel.m */; };
 		83DA179E1689843A00CCB83C /* hsIboolooViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83DA179D1689843A00CCB83C /* hsIboolooViewController.m */; };
+		83EE5925168C2BFE00D24AA2 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE5924168C2BFE00D24AA2 /* AFHTTPClient.m */; };
+		83EE5928168C2C2700D24AA2 /* IBoolooHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE5927168C2C2700D24AA2 /* IBoolooHttpClient.m */; };
+		83EE592B168C2EB000D24AA2 /* hsParamsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EE592A168C2EB000D24AA2 /* hsParamsViewController.m */; };
 		83F08377168C1A8B007F232E /* hsSiteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -84,10 +87,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8376580B168C4A7D00030357 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		8376580C168C4A7D00030357 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		8384E86F1689AB0E00873B41 /* hsHeadersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsHeadersViewController.h; sourceTree = "<group>"; };
 		8384E8701689AB0E00873B41 /* hsHeadersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHeadersViewController.m; sourceTree = "<group>"; };
 		8384E8731689B23200873B41 /* hsHeaderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsHeaderDetailViewController.h; sourceTree = "<group>"; };
 		8384E8741689B23200873B41 /* hsHeaderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHeaderDetailViewController.m; sourceTree = "<group>"; };
+		8389D51A168C5F33007F3298 /* hsCookieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsCookieDetailViewController.h; sourceTree = "<group>"; };
+		8389D51B168C5F33007F3298 /* hsCookieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsCookieDetailViewController.m; sourceTree = "<group>"; };
 		83A39185168AA4FD00DD53B7 /* hsHttpEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsHttpEngine.h; sourceTree = "<group>"; };
 		83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsHttpEngine.m; sourceTree = "<group>"; };
 		83A3918C168ADC3900DD53B7 /* hsSiteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsSiteViewController.h; sourceTree = "<group>"; };
@@ -161,8 +168,6 @@
 		83A6B04A168318B2007B35C3 /* NIViewRecycler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIViewRecycler.m; sourceTree = "<group>"; };
 		83A6B04B168318B2007B35C3 /* NSString+NimbusCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NimbusCore.h"; sourceTree = "<group>"; };
 		83A6B04C168318B2007B35C3 /* NSString+NimbusCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NimbusCore.m"; sourceTree = "<group>"; };
-		83A6B06716831AC7007B35C3 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
-		83A6B06816831AC7007B35C3 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
 		83A6B06916831AC7007B35C3 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		83A6B06A16831AC7007B35C3 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		83A6B06B16831AC7007B35C3 /* AFImageRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFImageRequestOperation.h; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFImageRequestOperation.h; sourceTree = "<group>"; };
@@ -180,8 +185,6 @@
 		83A6B07716831AC7007B35C3 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFXMLRequestOperation.m; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		83A6B07816831AC7007B35C3 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		83A6B07916831AC7007B35C3 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "nimbus/thirdparty/AFNetworking/AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		83D797CB16840B32002CF147 /* IBoolooHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoolooHttpClient.h; sourceTree = "<group>"; };
-		83D797CC16840B32002CF147 /* IBoolooHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBoolooHttpClient.m; sourceTree = "<group>"; };
 		83DA1775168965C100CCB83C /* hsResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsResponseViewController.h; sourceTree = "<group>"; };
 		83DA1776168965C100CCB83C /* hsResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsResponseViewController.m; sourceTree = "<group>"; };
 		83DA177816896AE300CCB83C /* hsBodyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsBodyCell.h; sourceTree = "<group>"; };
@@ -210,6 +213,12 @@
 		83DA1792168980F900CCB83C /* NITableViewModel+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NITableViewModel+Private.h"; path = "nimbus/src/models/src/NITableViewModel+Private.h"; sourceTree = "<group>"; };
 		83DA179C1689843A00CCB83C /* hsIboolooViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsIboolooViewController.h; sourceTree = "<group>"; };
 		83DA179D1689843A00CCB83C /* hsIboolooViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsIboolooViewController.m; sourceTree = "<group>"; };
+		83EE5923168C2BFE00D24AA2 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
+		83EE5924168C2BFE00D24AA2 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = nimbus/thirdparty/AFNetworking/AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
+		83EE5926168C2C2700D24AA2 /* IBoolooHttpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBoolooHttpClient.h; sourceTree = "<group>"; };
+		83EE5927168C2C2700D24AA2 /* IBoolooHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBoolooHttpClient.m; sourceTree = "<group>"; };
+		83EE5929168C2EB000D24AA2 /* hsParamsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsParamsViewController.h; sourceTree = "<group>"; };
+		83EE592A168C2EB000D24AA2 /* hsParamsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsParamsViewController.m; sourceTree = "<group>"; };
 		83F08375168C1A8B007F232E /* hsSiteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hsSiteDetailViewController.h; sourceTree = "<group>"; };
 		83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hsSiteDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -238,11 +247,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83765809168C4A5C00030357 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8376580B168C4A7D00030357 /* MBProgressHUD.h */,
+				8376580C168C4A7D00030357 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		838BEC5C16832F7A009FD77B /* HSHttpClient */ = {
 			isa = PBXGroup;
 			children = (
-				83D797CB16840B32002CF147 /* IBoolooHttpClient.h */,
-				83D797CC16840B32002CF147 /* IBoolooHttpClient.m */,
+				83EE5926168C2C2700D24AA2 /* IBoolooHttpClient.h */,
+				83EE5927168C2C2700D24AA2 /* IBoolooHttpClient.m */,
 				83A39185168AA4FD00DD53B7 /* hsHttpEngine.h */,
 				83A39186168AA4FD00DD53B7 /* hsHttpEngine.m */,
 			);
@@ -256,6 +274,7 @@
 				83A6AFA6168314EA007B35C3 /* main.m */,
 				83A6AFA9168314EA007B35C3 /* hsAppDelegate.h */,
 				83A6AFAA168314EA007B35C3 /* hsAppDelegate.m */,
+				83765809168C4A5C00030357 /* MBProgressHUD */,
 				83A6B064168319BB007B35C3 /* Nimbus */,
 				83A6B06616831A97007B35C3 /* AFNetworking */,
 				83A6AFA0168314EA007B35C3 /* http_status */,
@@ -296,6 +315,8 @@
 				83A3918D168ADC3900DD53B7 /* hsSiteViewController.m */,
 				83F08375168C1A8B007F232E /* hsSiteDetailViewController.h */,
 				83F08376168C1A8B007F232E /* hsSiteDetailViewController.m */,
+				83EE5929168C2EB000D24AA2 /* hsParamsViewController.h */,
+				83EE592A168C2EB000D24AA2 /* hsParamsViewController.m */,
 				83DA179C1689843A00CCB83C /* hsIboolooViewController.h */,
 				83DA179D1689843A00CCB83C /* hsIboolooViewController.m */,
 				83DA1775168965C100CCB83C /* hsResponseViewController.h */,
@@ -304,6 +325,8 @@
 				8384E8701689AB0E00873B41 /* hsHeadersViewController.m */,
 				8384E8731689B23200873B41 /* hsHeaderDetailViewController.h */,
 				8384E8741689B23200873B41 /* hsHeaderDetailViewController.m */,
+				8389D51A168C5F33007F3298 /* hsCookieDetailViewController.h */,
+				8389D51B168C5F33007F3298 /* hsCookieDetailViewController.m */,
 				83DA177816896AE300CCB83C /* hsBodyCell.h */,
 				83DA177916896AE300CCB83C /* hsBodyCell.m */,
 			);
@@ -418,8 +441,8 @@
 		83A6B06616831A97007B35C3 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				83A6B06716831AC7007B35C3 /* AFHTTPClient.h */,
-				83A6B06816831AC7007B35C3 /* AFHTTPClient.m */,
+				83EE5923168C2BFE00D24AA2 /* AFHTTPClient.h */,
+				83EE5924168C2BFE00D24AA2 /* AFHTTPClient.m */,
 				83A6B06916831AC7007B35C3 /* AFHTTPRequestOperation.h */,
 				83A6B06A16831AC7007B35C3 /* AFHTTPRequestOperation.m */,
 				83A6B06B16831AC7007B35C3 /* AFImageRequestOperation.h */,
@@ -605,7 +628,6 @@
 				83A6B05D168318B2007B35C3 /* NIState.m in Sources */,
 				83A6B05E168318B2007B35C3 /* NIViewRecycler.m in Sources */,
 				83A6B05F168318B2007B35C3 /* NSString+NimbusCore.m in Sources */,
-				83A6B07A16831AC7007B35C3 /* AFHTTPClient.m in Sources */,
 				83A6B07B16831AC7007B35C3 /* AFHTTPRequestOperation.m in Sources */,
 				83A6B07C16831AC7007B35C3 /* AFImageRequestOperation.m in Sources */,
 				83A6B07D16831AC7007B35C3 /* AFJSONRequestOperation.m in Sources */,
@@ -614,7 +636,6 @@
 				83A6B08016831AC7007B35C3 /* AFURLConnectionOperation.m in Sources */,
 				83A6B08116831AC7007B35C3 /* AFXMLRequestOperation.m in Sources */,
 				83A6B08216831AC7007B35C3 /* UIImageView+AFNetworking.m in Sources */,
-				83D797CD16840B32002CF147 /* IBoolooHttpClient.m in Sources */,
 				83DA1777168965C100CCB83C /* hsResponseViewController.m in Sources */,
 				83DA177A16896AE300CCB83C /* hsBodyCell.m in Sources */,
 				83DA1793168980FA00CCB83C /* NICellBackgrounds.m in Sources */,
@@ -632,6 +653,11 @@
 				83A39187168AA4FD00DD53B7 /* hsHttpEngine.m in Sources */,
 				83A3918E168ADC3900DD53B7 /* hsSiteViewController.m in Sources */,
 				83F08377168C1A8B007F232E /* hsSiteDetailViewController.m in Sources */,
+				83EE5925168C2BFE00D24AA2 /* AFHTTPClient.m in Sources */,
+				83EE5928168C2C2700D24AA2 /* IBoolooHttpClient.m in Sources */,
+				83EE592B168C2EB000D24AA2 /* hsParamsViewController.m in Sources */,
+				8376580D168C4A7D00030357 /* MBProgressHUD.m in Sources */,
+				8389D51C168C5F33007F3298 /* hsCookieDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,16 +17,23 @@
 @interface hsSiteViewController ()
 @property (nonatomic, readwrite, retain) NITableViewModel* model;
 @property (nonatomic, readwrite, retain) NITableViewActions* actions;
+@property (nonatomic, readwrite, retain) MBProgressHUD* HUD;
 @end
 
 @implementation hsSiteViewController
 
 @synthesize model = _modal;
 @synthesize actions = _actions;
+@synthesize HUD = _HUD;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadSite:)];
+    
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:self.HUD];
+    self.HUD.labelText = @"Loading";
+    
     [self setSiteData];
 }
 
@@ -36,9 +43,13 @@
 }
 
 - (void)reloadSite:(NSString *)identifer {
+    [self.HUD showUsingAnimation:YES];
+//    [self.blockAlertView show];
     [hsHttpEngine loadSiteConfig:^() {
         [self setSiteData];
         [self.tableView reloadData];
+        [self.HUD hideUsingAnimation:YES];
+//        [self.blockAlertView dismissWithClickedButtonIndex:0 animated:YES];
     }];
 }
 

@@ -123,6 +123,7 @@ parameters:(NSMutableDictionary *)params
         [params removeObjectForKey:routeId];
         [path stringByAppendingString:[NSString stringWithFormat:@"/%@", routeId]];
     }
+    NSLog(@"Ope: %@", path);
     NSMutableURLRequest *request = [self requestWithMethod:[route objectForKey:@"Method"] path:path parameters:params];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -137,7 +138,7 @@ parameters:(NSMutableDictionary *)params
     NSDictionary *operationDictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [[operation response] allHeaderFields], @"Response",
                                          [[operation request] allHTTPHeaderFields], @"Request",
-                                         [[NSHTTPCookieStorage sharedHTTPCookieStorage]cookies], @"Cookies",
+                                         [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies], @"Cookies",
                                          operation.responseString, @"Body", nil];
     return operationDictionary;
 }
