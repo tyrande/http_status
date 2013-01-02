@@ -120,10 +120,9 @@ parameters:(NSMutableDictionary *)params
     NSString *path = [route objectForKey:@"Path"];
     NSString *routeId = [params objectForKey:@"id"];
     if (routeId) {
-        [params removeObjectForKey:routeId];
-        [path stringByAppendingString:[NSString stringWithFormat:@"/%@", routeId]];
+        [params removeObjectForKey:@"id"];
+        path = [path stringByAppendingString:[NSString stringWithFormat:@"/%@", routeId]];
     }
-    NSLog(@"Ope: %@", path);
     NSMutableURLRequest *request = [self requestWithMethod:[route objectForKey:@"Method"] path:path parameters:params];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {

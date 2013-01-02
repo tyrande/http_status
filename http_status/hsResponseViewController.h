@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface hsResponseViewController : UIViewController
-- (void)requestWithIdentifer:(NSString *)identifer;
+- (void)requestWithIdentifer:(NSString *)identifer
+                  parameters:(NSMutableDictionary *)params;
 @end

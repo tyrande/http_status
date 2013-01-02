@@ -42,9 +42,11 @@
     for (NSHTTPCookie *cookie in cookies) {
         [tableContents addObject:[_actions attachToObject:[NISubtitleCellObject objectWithTitle:cookie.name subtitle:cookie.value]
                                           navigationBlock:^(id object, UIViewController* controller) {
-                                              hsCookieDetailViewController* cookieDetailController = [[hsCookieDetailViewController alloc] init];
-                                              [cookieDetailController showCookie:cookie];
-                                              [controller.navigationController pushViewController:cookieDetailController animated:YES];
+                                              hsHeaderDetailViewController* headerDetailController = [[hsHeaderDetailViewController alloc] init];
+                                              [headerDetailController showDetail:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                                                  [object title], @"Title",
+                                                                                  [NSString stringWithFormat:@"%@", cookie.properties], @"SubTitle", nil]];
+                                              [controller.navigationController pushViewController:headerDetailController animated:YES];
                                               return NO;
                                           }]];
     }

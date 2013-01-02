@@ -12,6 +12,7 @@
 
 #import "NimbusModels.h"
 #import "NimbusCore.h"
+#import "MBProgressHUD.h"
 
 #import "hsHttpEngine.h"
 
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) UITextView *bodyTextView;
 @property (nonatomic, readwrite, retain) NSDictionary* httpResponse;
 @property (nonatomic, readwrite, retain) NSString* httpIdentifer;
+@property (nonatomic, readwrite, retain) MBProgressHUD* HUD;
 @end
 
 @implementation hsResponseViewController
@@ -29,72 +31,41 @@
 @synthesize actions = _actions;
 @synthesize httpResponse = _httpResponse;
 @synthesize httpIdentifer = _httpIdentifer;
+@synthesize HUD = _HUD;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Headers" style:UIBarButtonItemStyleBordered target:self action:@selector(showHeaders:)];
+        
     }
     return self;
 }
 
-
-//- (id)initWithStyle:(UITableViewStyle)style {
-//    self = [super initWithStyle:UITableViewStyleGrouped];
-//    if (self) {
-//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Headers" style:UIBarButtonItemStyleBordered target:self action:@selector(showHeaders:)];
-//        _actions = [[NITableViewActions alloc] initWithTarget:self];
-//        self.bodyCell = [NITitleCellObject objectWithTitle:@"aaa"];
-//        NSArray* tableContents =
-//        [NSArray arrayWithObjects:
-//         @"Body",
-//         self.bodyCell,
-//         
-//         @"",
-//         [_actions attachToObject:[NITitleCellObject objectWithTitle:@"Headers"]
-//                  navigationBlock:^(id object, UIViewController* controller) {
-//                      hsHeadersViewController* headerController = [[hsHeadersViewController alloc] init];
-//                      [headerController setHeaders:self.httpResponse];
-//                      [controller.navigationController pushViewController:headerController animated:YES];
-//                      return NO;
-//                  }],
-//         nil];
-//        self.model = [[NITableViewModel alloc] initWithSectionedArray:tableContents delegate:(id)[NICellFactory class]];
-//        self.tableView.delegate = [self.actions forwardingTo:self];
-//    }
-//    return self;
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.tableView.dataSource = _model;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Headers" style:UIBarButtonItemStyleBordered target:self action:@selector(showHeaders:)];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:self.HUD];
+    self.HUD.labelText = @"Loading";
 }
 
 - (void)setBody {
-//    [self.bodyCell setTitle:[NSString stringWithFormat:@"%@", [self.httpResponse objectForKey:@"Body"]]];
-//    [self.tableView reloadData];
     self.bodyTextView = [[UITextView  alloc] initWithFrame:self.view.frame];
     self.bodyTextView.text = [NSString stringWithFormat:@"%@", [self.httpResponse objectForKey:@"Body"]];
     self.bodyTextView.scrollEnabled = YES;
     self.bodyTextView.editable = NO;
     [self.view addSubview: self.bodyTextView];
+    [self.HUD hideUsingAnimation:YES];
 }
 
-- (void)requestWithIdentifer:(NSString *)identifer {
-//    self.httpIdentifer = identifer;
-//    [[IBoolooHttpClient sharedClient] ope:identifer
-//                               parameters:[NSMutableDictionary dictionary]
-//                                  success:^(NSDictionary *httpResponse) {
-//                                      self.httpResponse = httpResponse;
-//                                      [self setBody];
-//                                  } failure:^(NSDictionary *httpResponse) {
-//                                      self.httpResponse = httpResponse;
-//                                      [self setBody];
-//                                  }];
-
+- (void)requestWithIdentifer:(NSString *)identifer
+                  parameters:(NSMutableDictionary *)params {
+    [self.HUD showUsingAnimation:YES];
     [[hsHttpEngine sharedEngine] ope:identifer
-                               parameters:[NSMutableDictionary dictionary]
+                               parameters:params
                                   success:^(NSDictionary *httpResponse) {
                                       self.httpResponse = httpResponse;
                                       [self setBody];

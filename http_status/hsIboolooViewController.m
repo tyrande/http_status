@@ -38,7 +38,7 @@
         [tableContents addObject:[_actions attachToObject:[NISubtitleCellObject objectWithTitle:indentifer subtitle:subtitle]
                                           navigationBlock:^(id object, UIViewController* controller) {
                                               hsResponseViewController* resController = [[hsResponseViewController alloc] init];
-                                              [resController requestWithIdentifer:[object title]];
+//                                              [resController requestWithIdentifer:[object title]];
                                               [controller.navigationController pushViewController:resController animated:YES];
                                               return NO;
                                           }]];

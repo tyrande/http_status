@@ -18,12 +18,14 @@
 @interface hsParamsViewController ()
 @property (nonatomic, readwrite, retain) NITableViewModel* model;
 @property (nonatomic, readwrite, retain) NSString* route;
+@property (nonatomic, readwrite, retain) NSMutableDictionary* params;
 @end
 
 @implementation hsParamsViewController
 
 @synthesize model = _modal;
 @synthesize route = _route;
+@synthesize params = _params;
 
 - (void)viewDidLoad
 {
@@ -38,12 +40,27 @@
     
     NSArray *paramsArray = [[paramsDictionary allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
     NSMutableArray* tableContents = [NSMutableArray array];
+    self.params = [[NSMutableDictionary alloc] init];
     [tableContents addObject:route];
     [tableContents addObject:[NISubtitleCellObject objectWithTitle:[routeDictionary objectForKey:@"Path"] subtitle:[routeDictionary objectForKey:@"Method"]]];
     [tableContents addObject:@"Params"];
     for (NSString *param in paramsArray) {
         [tableContents addObject:param];
-        [tableContents addObject:[NITextInputFormElement textInputElementWithID:0 placeholderText:@"Placeholder" value:[paramsDictionary objectForKey:param]]];
+        NSDictionary *paramDictionary = [paramsDictionary objectForKey:param];
+        NSString *paramType = [paramDictionary objectForKey:@"Type"];
+        if ([paramType isEqualToString:@"Text"]) {
+            NITextInputFormElement *textInputElement = [NITextInputFormElement textInputElementWithID:0 placeholderText:param value:[paramDictionary objectForKey:@"DefaultValue"]];
+            [tableContents addObject:textInputElement];
+            [self.params setObject:textInputElement forKey:param];
+        } else if ([paramType isEqualToString:@"Password"]) {
+            NITextInputFormElement *passwordInputElement = [NITextInputFormElement passwordInputElementWithID:0 placeholderText:param value:[paramDictionary objectForKey:@"DefaultValue"]];
+            [tableContents addObject:passwordInputElement];
+            [self.params setObject:passwordInputElement forKey:param];
+        } else {
+            NITextInputFormElement *textInputElement = [NITextInputFormElement textInputElementWithID:0 placeholderText:param value:[paramDictionary objectForKey:@"DefaultValue"]];
+            [tableContents addObject:textInputElement];
+            [self.params setObject:textInputElement forKey:param];
+        }
     }
     self.model = [[NITableViewModel alloc] initWithSectionedArray:tableContents delegate:(id)[NICellFactory class]];
     self.tableView.dataSource = self.model;
@@ -51,8 +68,13 @@
 }
 
 - (void)requestRoute:(id)sender {
+    NSArray *paramsArray = [self.params allKeys];
+    NSMutableDictionary *inputParams = [[NSMutableDictionary alloc] init];
+    for (NSString *paramKey in paramsArray) {
+        [inputParams setObject:((NITextInputFormElement*)[self.params objectForKey:paramKey]).value forKey:paramKey];
+    }
     hsResponseViewController* responseController = [[hsResponseViewController alloc] init];
-    [responseController requestWithIdentifer:self.route];
+    [responseController requestWithIdentifer:self.route parameters:inputParams];
     [self.navigationController pushViewController:responseController animated:YES];
 }
 @end
