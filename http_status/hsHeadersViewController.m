@@ -27,6 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 60;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bg.png"]];
+    self.tableView.opaque = NO;
+    
     self.tableView.dataSource = _model;
 }
 

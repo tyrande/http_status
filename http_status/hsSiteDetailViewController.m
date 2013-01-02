@@ -27,18 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.rowHeight = 60;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"bg.png"]];
+    self.tableView.opaque = NO;
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)loadSite:(NSString *)siteName {
@@ -55,7 +49,7 @@
         subtitle = [subtitle stringByAppendingString:[NSString stringWithFormat:@" %@", [[routes objectForKey:indentifer] objectForKey:@"Path"]]];
         [tableContents addObject:[_actions attachToObject:[NISubtitleCellObject objectWithTitle:indentifer subtitle:subtitle]
                                           navigationBlock:^(id object, UIViewController* controller) {
-                                              hsParamsViewController* paramsController = [[hsParamsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+                                              hsParamsViewController* paramsController = [[hsParamsViewController alloc] init];
                                               [paramsController loadDefaultParams:[object title]];
                                               [controller.navigationController pushViewController:paramsController animated:YES];
                                               return NO;

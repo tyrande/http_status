@@ -31,6 +31,11 @@
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Go" style:UIBarButtonItemStyleBordered target:self action:@selector(requestRoute:)];
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    self.tableView.rowHeight = 60;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg.png"]];
+    self.tableView.opaque = NO;
 }
 
 - (void)loadDefaultParams:(NSString *)route {
