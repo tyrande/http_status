@@ -12,6 +12,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    UIImage *normalButtonImage = [[UIImage imageNamed:@"blue_btn.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,10,0,10)];
+    [[UIBarButtonItem appearance] setBackgroundImage:normalButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *highlightButtonImage = [[UIImage imageNamed:@"blue_btn_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+    [[UIBarButtonItem appearance] setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    UIImage *backButtonImage = [[UIImage imageNamed:@"back_btn.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *backhighlightButtonImage = [[UIImage imageNamed:@"back_btn_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backhighlightButtonImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nav.png"] forBarMetrics:UIBarMetricsDefault];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 //        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;

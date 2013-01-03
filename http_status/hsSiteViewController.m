@@ -32,7 +32,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    UIImage *normalButtonImage = [[UIImage imageNamed:@"blue_btn.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,10,0,10)];
+//    [[UIBarButtonItem appearance] setBackgroundImage:normalButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    UIImage *highlightButtonImage = [[UIImage imageNamed:@"blue_btn_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+//    [[UIBarButtonItem appearance] setBackgroundImage:highlightButtonImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+//    UIImage *backButtonImage = [[UIImage imageNamed:@"back_btn.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    UIImage *backhighlightButtonImage = [[UIImage imageNamed:@"back_btn_s.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(0,13,0,10)];
+//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backhighlightButtonImage forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
+    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadSite:)];
+//    UIButton *rightButton = [[UIButton alloc] init];
+//    [rightButton setTitle:@"AAAAAAAAAAAA" forState:UIControlStateNormal];
+//    rightButton.titleLabel.font = [UIFont boldSystemFontOfSize:12];
+//    rightButton.titleLabel.adjustsFontSizeToFitWidth = TRUE;
+//    [rightButton sizeToFit];
+//    CGRect oldrightButtonRect = rightButton.frame;
+//    rightButton.frame = CGRectMake(oldrightButtonRect.origin.x, oldrightButtonRect.origin.y, oldrightButtonRect.size.width + 10, 29);
+//    UIImage *rightButtonImage = [[UIImage imageNamed:@"blue_btn.png"]
+//        resizableImageWithCapInsets:UIEdgeInsetsMake(0,10,0,10)];
+
+//    [rightButton setBackgroundImage:rightButtonImage forState:UIControlStateNormal];
+//    [rightButton addTarget:self action:@selector(reloadSite:) forControlEvents:UIControlEventTouchUpInside];
+//    [rightButton setShowsTouchWhenHighlighted:YES];
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     
 //    UIImageView *tempImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
 //    [tempImg setImage:[UIImage imageNamed:@"bg_1.JPG"]];
@@ -53,7 +76,7 @@
     self.tableView.opaque = NO;
 //    self.tableView.backgroundView = [UIImage imageNamed:@"gradientBackground.png"];
 //    NSLog(@"NAV H: %@", NSStringFromCGRect(self.navigationController.navigationBar.frame));
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav.png"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"nav.png"] forBarMetrics:UIBarMetricsDefault];
     
     self.HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:self.HUD];
@@ -103,8 +126,8 @@
         if (titleLabel) {
             titleLabel.text = [(NSDictionary *)object objectForKey:@"title"];
         } else {
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:[NSString stringWithFormat:@"cell_%@.png", [(NSDictionary *)object objectForKey:@"color"]]] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
-            cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:[NSString stringWithFormat:@"cell_%@_s.png", [(NSDictionary *)object objectForKey:@"color"]]] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+            cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:[NSString stringWithFormat:@"cell_%@_s.png", [(NSDictionary *)object objectForKey:@"color"]]] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
+            cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:[NSString stringWithFormat:@"cell_%@.png", [(NSDictionary *)object objectForKey:@"color"]]] stretchableImageWithLeftCapWidth:0.0 topCapHeight:5.0]];
             ((UIButton *)cell.subviews[2]).hidden = YES;
             titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 50)];
             titleLabel.tag = 1;
